@@ -29,6 +29,7 @@ include "configdb.php";
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark pl-4 fixed-top sticky-top">
 <a class="navbar-brand" href="#"><img src="4.jpeg" width="30" height="30" class="d-inline-block align-top rounded-circle">
 Merpati Futsal
+HEHEHEHEHE
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
