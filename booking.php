@@ -26,7 +26,7 @@ include "configdb.php";
 <body class="text-monospace">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top" style="background-color: #333333;">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top shadow" style="background-color: #333333;">
 <a class="navbar-brand" href="#"><img src="4.jpeg" width="30" height="30" class="d-inline-block align-top rounded-circle">
 Merpati Futsal
 </a>
@@ -52,7 +52,7 @@ Merpati Futsal
 </nav>
 
 <!-- jumbotron -->
-<div class="jumbotron jumbotron-fluid rounded-bottom mb-0" style="background-color: #333333; background: url(1.jpeg); background-repeat: no-repeat; background-size: 150%">
+<div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; background: url(1.jpeg); background-repeat: no-repeat; background-size: 150%">
   <div class="container text-center">
   	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Sport Center</h1>
@@ -73,84 +73,101 @@ Merpati Futsal
 		</h2>
 		</h1>
     </div>
-     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body row">
-      	<div class="col-sm-3">
-      	<label for="exampleInput">Tanggal </label>
-    	<input type="date" class="form-control" id="exampleInput" placeholder="">
-		</div>
-		<div class="col text-center px-3" align="Center">
-      		<button type="button" class="btn btn-secondary">7.00</button>
-      		<button type="button" class="btn btn-secondary">8.00</button>
-      		<button type="button" class="btn btn-secondary">9.00</button>
-      		<button type="button" class="btn btn-secondary">10.00</button>
-      		<button type="button" class="btn btn-secondary">11.00</button>
-      		<button type="button" class="btn btn-secondary">12.00</button>
-      		<button type="button" class="btn btn-secondary">13.00</button>
-      		<button type="button" class="btn btn-secondary">14.00</button>
-      		<button type="button" class="btn btn-secondary">15.00</button>
-      		<button type="button" class="btn btn-secondary">16.00</button>
-      		<button type="button" class="btn btn-secondary">17.00</button>
-      		<button type="button" class="btn btn-secondary">18.00</button>
-      		<button type="button" class="btn btn-secondary">19.00</button>
-      		<button type="button" class="btn btn-secondary">20.00</button>
-      		<button type="button" class="btn btn-secondary">21.00</button>
-      		<button type="button" class="btn btn-secondary">22.00</button>
-		</div> 
-		</div>  
+        <div class="col-sm-3">
+        	<label for="exampleInput">Tanggal </label>
+      	  <input type="date" class="form-control" id="exampleInput" placeholder="">
+  		  </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">7.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">8.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">9.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">10.00</button>
+    	  </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">11.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">12.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">13.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">14.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">15.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">16.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">17.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">18.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">19.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">20.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">21.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">22.00</button>
+        </div>  
       </div>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body row">
         <div class="col-sm-3">
-      	<label for="exampleInput">Tanggal </label>
-    	<input type="date" class="form-control" id="exampleInput" placeholder="">
-		</div>
-		<div class="col text-center px-3" align="Center">
-      		<button type="button" class="btn btn-secondary">7.00</button>
-      		<button type="button" class="btn btn-secondary">8.00</button>
-      		<button type="button" class="btn btn-secondary">9.00</button>
-      		<button type="button" class="btn btn-secondary">10.00</button>
-      		<button type="button" class="btn btn-secondary">11.00</button>
-      		<button type="button" class="btn btn-secondary">12.00</button>
-      		<button type="button" class="btn btn-secondary">13.00</button>
-      		<button type="button" class="btn btn-secondary">14.00</button>
-      		<button type="button" class="btn btn-secondary">15.00</button>
-      		<button type="button" class="btn btn-secondary">16.00</button>
-      		<button type="button" class="btn btn-secondary">17.00</button>
-      		<button type="button" class="btn btn-secondary">18.00</button>
-      		<button type="button" class="btn btn-secondary">19.00</button>
-      		<button type="button" class="btn btn-secondary">20.00</button>
-      		<button type="button" class="btn btn-secondary">21.00</button>
-      		<button type="button" class="btn btn-secondary">22.00</button>
-		</div> 
+        	<label for="exampleInput">Tanggal </label>
+          <input type="date" class="form-control" id="exampleInput" placeholder="">
+		    </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">7.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">8.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">9.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">10.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">11.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">12.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">13.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">14.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">15.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">16.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">17.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">18.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">19.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">20.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">21.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">22.00</button>
+        </div>		 
       </div>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body row">
         <div class="col-sm-3">
-      	<label for="exampleInputPassword1">Tanggal </label>
-    	<input type="date" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		</div>
-		<div class="col text-center px-3" align="Center">
-      		<button type="button" class="btn btn-secondary">7.00</button>
-      		<button type="button" class="btn btn-secondary">8.00</button>
-      		<button type="button" class="btn btn-secondary">9.00</button>
-      		<button type="button" class="btn btn-secondary">10.00</button>
-      		<button type="button" class="btn btn-secondary">11.00</button>
-      		<button type="button" class="btn btn-secondary">12.00</button>
-      		<button type="button" class="btn btn-secondary">13.00</button>
-      		<button type="button" class="btn btn-secondary">14.00</button>
-      		<button type="button" class="btn btn-secondary">15.00</button>
-      		<button type="button" class="btn btn-secondary">16.00</button>
-      		<button type="button" class="btn btn-secondary">17.00</button>
-      		<button type="button" class="btn btn-secondary">18.00</button>
-      		<button type="button" class="btn btn-secondary">19.00</button>
-      		<button type="button" class="btn btn-secondary">20.00</button>
-      		<button type="button" class="btn btn-secondary">21.00</button>
-      		<button type="button" class="btn btn-secondary">22.00</button>
-		</div> 
-      </div>
+        	<label for="exampleInputPassword1">Tanggal </label>
+        	<input type="date" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		  </div>
+          <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">7.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">8.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">9.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">10.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">11.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">12.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">13.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">14.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">15.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">16.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">17.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">18.00</button>
+        </div>
+        <div class="col p-1">
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">19.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">20.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">21.00</button>
+          <button type="button" class="btn btn-block btn-secondary col-sm-9">22.00</button>
+        </div>
+        </div>
     </div>
   </div>
 </div>

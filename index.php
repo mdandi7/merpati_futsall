@@ -29,7 +29,7 @@ include "configdb.php";
 <body class="text-monospace">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top" style="background-color: #333333;">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top shadow" style="background-color: #333333;">
 <a class="navbar-brand" href="#"><img src="4.jpeg" width="30" height="30" class="d-inline-block align-top rounded-circle">
 Merpati Futsal
 </a>
@@ -55,7 +55,7 @@ Merpati Futsal
 </nav>
 
 <!-- jumbotron -->
-<div class="jumbotron jumbotron-fluid rounded-bottom mb-0" style="background-color: #333333; background: url(1.jpeg); background-repeat: no-repeat; background-size: 150%">
+<div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; background: url(1.jpeg); background-repeat: no-repeat; background-size: 150%">
   <div class="container text-center">
   	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Sport Center</h1>
