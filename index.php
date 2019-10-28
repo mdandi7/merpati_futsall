@@ -1,6 +1,6 @@
 <?php
-// include "string.php";
-// include "configdb.php";
+include "string.php";
+include "configdb.php";
 
 // $con = OpenCon();
 ?>
@@ -63,74 +63,6 @@ Merpati Futsal
   </div>
 </div>
 
-<!-- Image SLider -->
-<!-- <div id="carouselExampleCaptions" class=" carousel slide carousel-fade" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="3.jpeg " class="d-inline">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="1.jpeg">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="3.jpeg" alt="Responsive image">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> -->
-
-
-<!-- About Us -->
-<!-- <section id="about" class="container about">
-<div class="py-3">
-	<div class="col text-center">
-		<div class="py-2">
-			<h1>Tentang Kami</h1>
-		</div>
-	</div>
-		<div class="row text-justify mx-0">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-</div>
-</section> -->
-
 <!-- option -->
 <div class="accordion container py-4" id="accordionExample">
   <div class="card" >
@@ -173,24 +105,24 @@ Merpati Futsal
   <h1>Lapangan Sport Center</h1>
 </div>
 <div class="container-fluid card-deck text-justify">
-  <div class=" card">
-    <img class="card-img-top" src="1.jpeg" alt="Card image cap">
+  <div class="card">
+    <img class="card-img-top" height="260" src="1.jpeg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Lapangan Futsal</h5>
+      <h5 class="card-title"><strong>Lapangan Futsal A</strong></h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="2.jpeg" alt="Card image cap">
+    <img class="card-img-top" height="260" src="2.jpeg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title"><strong>Lapangan Futsal B</strong></h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="3.jpeg" alt="Card image cap">
+    <img class="card-img-top" height="260" src="3.jpeg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title"><strong>Lapangan Badminton</strong></h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     </div>
   </div>

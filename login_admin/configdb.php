@@ -5,7 +5,7 @@ $connection = mysqli_connect("localhost", "root", "", "merpati_futsal");
 //$db = mysqli_select_db("test", $connection);
 session_start();// Starting Session
 // Storing Session
-$user_check=$_SESSION['login_user'];
+$user_check=$_SESSION['login_admin'];
 // SQL Query To Fetch Complete Information Of User
 $ses_sql = mysqli_query($connection, "select username from user where username='$user_check'");
 $row = mysqli_fetch_assoc($ses_sql);
