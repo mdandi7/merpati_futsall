@@ -29,7 +29,7 @@ include "configdb.php";
 <body class="text-monospace">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top shadow" style="background-color: #333333;">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top shadow" style="background-color: #333333;">
 <a class="navbar-brand" href="#"><img src="4.jpeg" width="30" height="30" class="d-inline-block align-top rounded-circle">
 Merpati Futsal
 </a>
@@ -52,7 +52,7 @@ Merpati Futsal
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
 
 <!-- jumbotron -->
 <div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; /*background: url(1.jpeg);*/ background-repeat: no-repeat; background-size: 150%">
@@ -63,29 +63,75 @@ Merpati Futsal
   </div>
 </div>
 
-
-<div class="container py-5">
-  <h5 class="py-2 px-2 rounded text-light" style="background-color: #333333;">Untuk melakukan pendataan, silahkan pilih menu dibawah ini</h5>
-  <div class="card-group text-center py-3">
-  <div class="card mr-sm-2">
-    <a href="data_pesanan.php"><img src="1.jpeg"  class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Data Pesanan</h5>
-    </div>
-  </div>
-  <div class="card mr-sm-2">
-    <a href="data_lapangan.php"><img src="1.jpeg"  class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Data Lapangan</h5>
-    </div>
-  </div>
-  <div class="card mr-sm-2">
-    <a href="data_user.php"><img src="1.jpeg"  class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Data User</h5>
-    </div>
-  </div>
+<div class="container-fluid  py-4">
+  <button onclick="goBack()" class="btn btn-info"><-- Kembali ke Menu Utama</button>
 </div>
+
+<div class="container py-4">
+  <h5>Data Pesanan</h5>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-info">print</button>
 </div>
 
 <!-- footer -->
@@ -96,6 +142,13 @@ Merpati Futsal
 
 
 </body>
+
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
+
 <script src="../assets/jquery-3.4.1.min.js" type="text/javascript"></script>
 <script src="../assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </html>
