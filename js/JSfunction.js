@@ -2,7 +2,7 @@
 File : JSfunction.js
 Author : Danny Bastian M.
 Use : Every Javascript function will be placed here for merpati_futsal project.
-Version : 1.0
+Version : 1.0.0
 */
 
 //call this with the ID of the input tag.
