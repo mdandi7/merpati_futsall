@@ -5,7 +5,7 @@ Use : Every Javascript function will be placed here for merpati_futsal project.
 Version : 1.0.0
 */
 
-//call this with the ID of the input tag.
+//Autofill date field in page
 function fillDate(e){
   var tgl = e;
   var today = new Date();
@@ -24,6 +24,7 @@ function fillDate(e){
   document.getElementById(tgl).value = fullDate;
 }
 
+//Auto disable button based on current time
 function fillButton(e){
   var today = new Date();
   var hours = today.getHours();
@@ -40,6 +41,7 @@ function fillButton(e){
   }
 }
 
+//this function will disabled unnecessary button
 function fillButtonOnclick(tgl,id){
   
   var today = new Date();
@@ -71,4 +73,14 @@ function fillButtonOnclick(tgl,id){
       document.getElementById(lap).disabled = true; 
     }
   }
+}
+
+//Autofill form booking when time button clicked
+function fillFormBooking(e,lap){
+  var fieldTgl = 'tgl'+lap;
+  var tgl = document.getElementById(fieldTgl).value;
+  var lap = 'Lapangan '+lap.substring(3);
+  document.getElementById('tglForm').value = tgl;
+  document.getElementById('jam').value = e;
+  document.getElementById('lapangan').value = lap;
 }

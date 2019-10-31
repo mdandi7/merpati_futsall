@@ -1,6 +1,7 @@
 <?php
 include "string.php";
 include "configdb.php";
+include "db-con.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +25,47 @@ include "configdb.php";
 	</style>
 
   <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/JSfunction.js"></script>
   <script type="text/javascript">
     function fillOnLoad(e){
-      fillDate('tgl');
-      fillDate('tgl_1');
-      fillDate('tgl_2');
-      fillDate('tgl_3');
+      fillDate('tgllapA');
+      fillDate('tgllapB');
+      fillDate('tgllapBat');
+      fillDate('tglForm');
 
       var jam = [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
       for (var i = 0;i < jam.length; i++){
         fillButton(jam[i]);
       }
     }
+
+  function getButtonInfo() {
+    $.ajax({
+        type: "POST",
+        url:'get-button-avail-ajax.php',
+        data: {
+          date: document.getElementById('tgllapA').value
+        },
+        complete: function (response) {
+          /*if(response.responseText == 'test'){
+            $('#output').html(response.responseText);
+          }else{
+            $('#output').html('salah');
+          }*/
+          $('#output').html(response.responseText);
+        },
+        error: function () {
+            $('#output').html('Bummer: there was an error!');
+        },
+    });
+    return false;
+    }
   </script>
 </head>
 
 <!-- PAGE BODY -->
-<body class="text-monospace" onload="fillOnLoad();">
+<body class="text-monospace" onload="fillOnLoad(); return getButtonInfo();">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-dark pl-4 fixed-top sticky-top shadow" style="background-color: #333333;">
@@ -95,96 +119,69 @@ Merpati Futsal
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl">Tanggal </label>
-      	  <input type="date" class="form-control" id="tgl" oninput="fillButtonOnclick(this.value,'lapA');">
+      	  <input type="date" class="form-control" id="tgllapA" oninput="fillButtonOnclick(this.value,'lapA');">
   		  </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="7lapA">07.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="8lapA">08.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="9lapA">09.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="10lapA">10.00</button>
-    	  </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="11lapA">11.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="12lapA">12.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="13lapA">13.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="14lapA">14.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="15lapA">15.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="16lapA">16.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="17lapA">17.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="18lapA">18.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="19lapA">19.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="20lapA">20.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="21lapA">21.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="22lapA">22.00</button>
-        </div>  
+        <?php
+          $j = 7;
+          for ($i=0; $i<4; $i++){
+            echo "<div class='col p-1'>";
+            for ($k=$j;$k<$j+4;$k++){
+              if($k<10){
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapA' value=0",$k,":00 onclick='fillFormBooking(this.value,\"lapA\")'>0",$k,".00</button>";
+              }else{
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapA' value=",$k,":00 onclick='fillFormBooking(this.value,\"lapA\")'>",$k,".00</button>";
+              }
+            }
+            $j = $j+4;
+            echo "</div>";
+          }
+        ?>
       </div>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl_1">Tanggal </label>
-          <input type="date" class="form-control" id="tgl_1">
+          <input type="date" class="form-control" id="tgllapB" oninput="fillButtonOnclick(this.value,'lapB');">
 		    </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="7lapB">07.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="8lapB">08.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="9lapB">09.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="10lapB">10.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="11lapB">11.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="12lapB">12.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="13lapB">13.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="14lapB">14.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="15lapB">15.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="16lapB">16.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="17lapB">17.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="18lapB">18.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="19lapB">19.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="20lapB">20.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="21lapB">21.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="22lapB">22.00</button>
-        </div>		 
+        <?php
+          $j = 7;
+          for ($i=0; $i<4; $i++){
+            echo "<div class='col p-1'>";
+            for ($k=$j;$k<$j+4;$k++){
+              if($k<10){
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapB' value=0",$k,":00 onclick='fillFormBooking(this.value,\"lapB\")'>0",$k,".00</button>";
+              }else{
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapB' value=",$k,":00 onclick='fillFormBooking(this.value,\"lapB\")'>",$k,".00</button>";
+              }
+            }
+            $j = $j+4;
+            echo "</div>";
+          }
+        ?> 
       </div>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl_2">Tanggal </label>
-        	<input type="date" class="form-control" id="tgl_2">
+        	<input type="date" class="form-control" id="tgllapBat" oninput="fillButtonOnclick(this.value,'lapBat');">
   		  </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="7lapBat">07.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="8lapBat">08.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="9lapBat">09.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="10lapBat">10.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="11lapBat">11.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="12lapBat">12.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="13lapBat">13.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="14lapBat">14.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="15lapBat">15.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="16lapBat">16.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="17lapBat">17.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="18lapBat">18.00</button>
-        </div>
-        <div class="col p-1">
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="19lapBat">19.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="20lapBat">20.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="21lapBat">21.00</button>
-          <button type="button" class="btn btn-block btn-secondary col-sm-9" id="22lapBat">22.00</button>
-        </div>
+        <?php
+          $j = 7;
+          for ($i=0; $i<4; $i++){
+            echo "<div class='col p-1'>";
+            for ($k=$j;$k<$j+4;$k++){
+              if($k<10){
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapBat' value=0",$k,":00 onclick='fillFormBooking(this.value,\"lapBat\")'>0",$k,".00</button>";
+              }else{
+                echo "<button type='button' class='btn btn-block btn-secondary col-sm-9' id='",$k,"lapBat' value=",$k,":00 onclick='fillFormBooking(this.value,\"lapBat\")'>",$k,".00</button>";
+              }
+            }
+            $j = $j+4;
+            echo "</div>";
+          }
+        ?> 
         </div>
     </div>
   </div>
@@ -193,25 +190,27 @@ Merpati Futsal
 <!-- booking form -->
 <div style="background-color: #333333;" class="col">
 <h1 class="text-center text-light pt-2">Form Booking Lapangan</h1>
-<form class="container text-light">
+<form class="container text-light" method="post">
+<div id="output">waiting for action</div>
   <div class="form form-group">
     <label for="name">Nama Pemesan</label>
-    <input type="name" class="form-control col-sm-5" id="name" aria-describedby="emailHelp" placeholder="Nama Pemesan">
+    <input type="name" class="form-control col-sm-5" id="name" name="name" placeholder="Nama Pemesan" required="required">
   </div>
   <div class="form-group">
     <label for="tgl_3">Tanggal</label>
-    <input type="date" class="form-control col-sm-5" id="tgl_3" placeholder="Tanggal" disabled="disabled">
+    <input type="date" class="form-control col-sm-5" id="tglForm" name="tglForm" placeholder="Tanggal" readonly="readonly">
   </div>
   <div class="form-group">
     <label for="jam">Jam</label>
-    <input type="time" class="form-control col-sm-5" id="jam" placeholder="Jam" disabled="disabled">
+    <input type="text" class="form-control col-sm-5" id="jam" name="jam" placeholder="Jam" readonly="readonly" required="required">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Lapangan</label>
-    <input type="text" class="form-control col-sm-5" id="Lapangan" placeholder="Lapangan" disabled="disabled">
+    <input type="text" class="form-control col-sm-5" id="lapangan" name="lapangan" placeholder="Lapangan" readonly="readonly" required="required">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" id="formbooking" name="formbooking">Book!</button>
 </form>
+
 </div>
 
 <!-- footer -->
