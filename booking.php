@@ -41,7 +41,45 @@ include "db-con.php";
     }
 
   function getButtonInfo() {
-    $.ajax({
+    var jam = [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+    var lap = ['Lapangan A','Lapangan B','Lapangan Batminton'];
+    var lapId = ['lapA','lapB','lapBat'];
+    for (var j = 0; j < lap.length; j++){
+      for (var i = 0;i < jam.length; i++){
+        var lapIdFix = jam[i]+lapId[j];
+        var lapId2 = jam[i]+lap[j];
+        if(jam[i] < 10){
+          var jamFix = '0'+jam[i]+':00:00'; 
+        }else{
+          var jamFix = jam[i]+':00:00';
+        }
+
+        $.ajax({
+          type: "POST",
+          url:'get-button-avail-ajax.php',
+          data: {
+            date: document.getElementById('tgllapA').value,
+            time: jamFix,
+            lapangan: lap[j]
+          },
+          complete: function (response) {
+            if(response.responseText != "0"){
+              document.getElementById(lapIdFix).disabled = true;
+              $('#output').html(response.responseText );
+              $('#output1').html(lapIdFix);
+              $('#output2').html(lapId2);
+            }/*else{
+              $('#output1').html('salah');
+            }
+            $('#output').html(response.responseText);*/
+          },
+          error: function () {
+              $('#output').html('Bummer: there was an error!');
+          },
+        });
+      }
+    }
+    /*$.ajax({
         type: "POST",
         url:'get-button-avail-ajax.php',
         data: {
@@ -52,13 +90,13 @@ include "db-con.php";
             $('#output').html(response.responseText);
           }else{
             $('#output').html('salah');
-          }*/
+          }
           $('#output').html(response.responseText);
         },
         error: function () {
             $('#output').html('Bummer: there was an error!');
         },
-    });
+    });*/
     return false;
     }
   </script>
@@ -192,6 +230,10 @@ Merpati Futsal
 <h1 class="text-center text-light pt-2">Form Booking Lapangan</h1>
 <form class="container text-light" method="post">
 <div id="output">waiting for action</div>
+<div id="output1">waiting for action</div>
+<div id="output2">waiting for action</div>
+<div id="output3">waiting for action</div>
+<div id="output4">waiting for action</div>
   <div class="form form-group">
     <label for="name">Nama Pemesan</label>
     <input type="name" class="form-control col-sm-5" id="name" name="name" placeholder="Nama Pemesan" required="required">

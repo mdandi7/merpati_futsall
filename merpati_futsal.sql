@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Okt 2019 pada 21.49
+-- Generation Time: 31 Okt 2019 pada 05.55
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `merpati_futsal`
 --
+CREATE DATABASE IF NOT EXISTS `merpati_futsal` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `merpati_futsal`;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `lapangan_book`
+--
+
+CREATE TABLE `lapangan_book` (
+  `booking_code` int(11) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jam` time NOT NULL,
+  `lapangan` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `lapangan_book`
+--
+
+INSERT INTO `lapangan_book` (`booking_code`, `nama`, `tanggal`, `jam`, `lapangan`) VALUES
+(6, 'Danny', '2019-10-31', '22:00:00', 'Lapangan A');
 
 -- --------------------------------------------------------
 
@@ -48,6 +71,12 @@ INSERT INTO `user` (`user_id`, `nama`, `username`, `password`, `email`, `user_in
 --
 
 --
+-- Indexes for table `lapangan_book`
+--
+ALTER TABLE `lapangan_book`
+  ADD PRIMARY KEY (`booking_code`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -57,6 +86,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `lapangan_book`
+--
+ALTER TABLE `lapangan_book`
+  MODIFY `booking_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `user`
 --
