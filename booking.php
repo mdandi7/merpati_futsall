@@ -57,6 +57,7 @@ include "db-con.php";
         $.ajax({
           type: "POST",
           url:'get-button-avail-ajax.php',
+          async:false,
           data: {
             date: document.getElementById('tgllapA').value,
             time: jamFix,
@@ -65,9 +66,6 @@ include "db-con.php";
           complete: function (response) {
             if(response.responseText != "0"){
               document.getElementById(lapIdFix).disabled = true;
-              $('#output').html(response.responseText );
-              $('#output1').html(lapIdFix);
-              $('#output2').html(lapId2);
             }/*else{
               $('#output1').html('salah');
             }
@@ -229,11 +227,6 @@ Merpati Futsal
 <div style="background-color: #333333;" class="col">
 <h1 class="text-center text-light pt-2">Form Booking Lapangan</h1>
 <form class="container text-light" method="post">
-<div id="output">waiting for action</div>
-<div id="output1">waiting for action</div>
-<div id="output2">waiting for action</div>
-<div id="output3">waiting for action</div>
-<div id="output4">waiting for action</div>
   <div class="form form-group">
     <label for="name">Nama Pemesan</label>
     <input type="name" class="form-control col-sm-5" id="name" name="name" placeholder="Nama Pemesan" required="required">

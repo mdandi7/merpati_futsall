@@ -59,7 +59,7 @@ Merpati Futsal
   <div class="container text-center">
   	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Admin Dashboard</h1>
-    <p  class="lead text-light ">Bisa nda ini di ganti jadi nama admin yg login ? bisa lah yaa</p>
+    <p  class="lead text-light "><?php echo $login_session?></p>
   </div>
 </div>
 
@@ -72,65 +72,30 @@ Merpati Futsal
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Booking Code</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Tanggal</th>
+      <th scope="col">Jam</th>
+      <th scope="col">Jam</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  <?php
+    $query = mysqli_query($connection,"SELECT * FROM lapangan_book");
+
+    $rows = mysqli_num_rows($query);
+    for($i=0;$i<$rows;$i++){
+      $result = mysqli_fetch_assoc($query);
+      //$namaobat_pass = $result['nama_obat'];
+      echo "<tr><td>" .$result['booking_code']. "</td>";
+      echo "<td>" .$result['nama']. "</td>";
+      echo "<td>" .$result['tanggal']. "</td>";
+      echo "<td>" .$result['jam']. "</td>";
+      echo "<td>" .$result['lapangan']. "</td>";
+    }
+  ?>
   </tbody>
 </table>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
 <button class="btn btn-info">print</button>
 </div>
 

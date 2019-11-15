@@ -59,7 +59,7 @@ Merpati Futsal
   <div class="container text-center">
   	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Admin Dashboard</h1>
-    <p  class="lead text-light ">Bisa nda ini di ganti jadi nama admin yg login ? bisa lah yaa</p>
+    <p  class="lead text-light "><?php echo $login_session?></p>
   </div>
 </div>
 
