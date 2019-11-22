@@ -66,67 +66,43 @@ Merpati Futsal
 <div class="container-fluid  py-4">
   <button onclick="goBack()" class="btn btn-info"><-- Kembali ke Menu Utama</button>
 </div>
+ 
+<div class="container-fluid row justify-content-end">
+<button class="btn btn-info ">Tambah Data Lapangan</button>
+</div>
 
 <div class="container py-4">
-  <h5>Data Pesanan</h5>
+  <h5>Detail Lapangan</h5>
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">No</th>
+      <th scope="col">Nama Lapangan</th>
+      <th scope="col">Harga Lapangan</th>
+      <th scope="col">Keterangan</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Lapangan A</td>
+      <td>Rp. 120000</td>
+      <td><button class="btn btn-info">edit</button>
+          <button class="btn btn-danger">delete</button></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>Lapangan B</td>
+      <td>Rp. 120000</td>
+      <td><button class="btn btn-info">edit</button>
+          <button class="btn btn-danger">delete</button></td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td>Lapangan Badminton</td>
+      <td>Rp. 120000</td>
+      <td><button class="btn btn-info">edit</button>
+          <button class="btn btn-danger">delete</button></td>
     </tr>
   </tbody>
 </table>
