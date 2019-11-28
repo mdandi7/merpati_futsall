@@ -77,10 +77,14 @@ function fillButtonOnclick(tgl,id){
 
 //Autofill form booking when time button clicked
 function fillFormBooking(e,lap){
+  var today=new Date();
+  var time=today.getHours() +':'+ today.getMinutes() +':'+ today.getSeconds();
+
   var fieldTgl = 'tgl'+lap;
   var tgl = document.getElementById(fieldTgl).value;
   var lap = 'Lapangan '+lap.substring(3);
   document.getElementById('tglForm').value = tgl;
   document.getElementById('jam').value = e;
   document.getElementById('lapangan').value = lap;
+  document.getElementById('book_time').value = time;
 }

@@ -72,7 +72,7 @@ include "db-con.php";
             $('#output').html(response.responseText);*/
           },
           error: function () {
-              $('#output').html('Bummer: there was an error!');
+              alert("Database bermasalah");
           },
         });
       }
@@ -113,15 +113,16 @@ Merpati Futsal
 </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto mr-sm-2">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.php">Beranda<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="booking.php">Booking</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="confirm_booking.php">Booking History</a>
           <a class="dropdown-item" href="logout.php">Logout</a>
         </div>
       </li>
@@ -229,7 +230,7 @@ Merpati Futsal
 <form class="container text-light" method="post">
   <div class="form form-group">
     <label for="name">Nama Pemesan</label>
-    <input type="name" class="form-control col-sm-5" id="name" name="name" placeholder="Nama Pemesan" required="required">
+    <input type="name" class="form-control col-sm-5" id="name" name="name" placeholder="Nama Pemesan" required="required" value="<?php echo $login_name; ?>" readonly="readonly">
   </div>
   <div class="form-group">
     <label for="tgl_3">Tanggal</label>
@@ -242,6 +243,7 @@ Merpati Futsal
   <div class="form-group">
     <label for="exampleFormControlSelect1">Lapangan</label>
     <input type="text" class="form-control col-sm-5" id="lapangan" name="lapangan" placeholder="Lapangan" readonly="readonly" required="required">
+    <input type="text" class="invisible" id="book_time" name="book_time" placeholder="Lapangan"  required="required" readonly="readonly">
   </div>
   <button type="submit" class="btn btn-primary" id="formbooking" name="formbooking">Book!</button>
 </form>

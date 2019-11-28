@@ -8,23 +8,23 @@ include "configdb.php";
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $nama_aplikasi ?></title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
+  <title><?php echo $nama_aplikasi ?></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
 
-	<style type="text/css">
-		.navbar {
-			padding: .8rem;
-		}
-		.navbar-nav li {
-			padding-right: 20px;
-		}
-		.carousel-inner img {
-			width: 100%;
-			height: 100%;
-		}
-	</style>
+  <style type="text/css">
+    .navbar {
+      padding: .8rem;
+    }
+    .navbar-nav li {
+      padding-right: 20px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body class="text-monospace">
 
@@ -57,7 +57,7 @@ Merpati Futsal
 <!-- jumbotron -->
 <div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; /*background: url(1.jpeg);*/ background-repeat: no-repeat; background-size: 150%">
   <div class="container text-center">
-  	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
+    <img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Admin Dashboard</h1>
     <p  class="lead text-light "><?php echo $login_session?></p>
   </div>
@@ -66,52 +66,39 @@ Merpati Futsal
 <div class="container-fluid  py-4">
   <button onclick="goBack()" class="btn btn-info"><-- Kembali ke Menu Utama</button>
 </div>
- 
-<div class="container-fluid row justify-content-end">
-<button class="btn btn-info ">Tambah Data Lapangan</button>
-</div>
 
 <div class="container py-4">
-  <h5>Detail Lapangan</h5>
+  <h5>Data Pesanan</h5>
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama Lapangan</th>
-      <th scope="col">Harga Lapangan</th>
-      <th scope="col">Keterangan</th>
+      <th scope="col">Lap Code</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Harga</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Lapangan A</td>
-      <td>Rp. 120000</td>
-      <td><button class="btn btn-info">edit</button>
-          <button class="btn btn-danger">delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Lapangan B</td>
-      <td>Rp. 120000</td>
-      <td><button class="btn btn-info">edit</button>
-          <button class="btn btn-danger">delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Lapangan Badminton</td>
-      <td>Rp. 120000</td>
-      <td><button class="btn btn-info">edit</button>
-          <button class="btn btn-danger">delete</button></td>
-    </tr>
+  <?php
+    $query = mysqli_query($connection,"SELECT * FROM lapangan");
+
+    $rows = mysqli_num_rows($query);
+    for($i=0;$i<$rows;$i++){
+      $result = mysqli_fetch_assoc($query);
+      //$namaobat_pass = $result['nama_obat'];
+      echo "<tr><td>" .$result['lap_id']. "</td>";
+      echo "<td>" .$result['nama_lap']. "</td>";
+      echo "<td>" .$result['harga_lap']. "</td>";
+    }
+  ?>
   </tbody>
 </table>
+<button class="btn btn-info">print</button>
 </div>
 
 <!-- footer -->
 <footer class=" text-center text-light pb-2 pt-2" style="background-color: #333333;">
   <p></p>
-	<p>&copy Copyright 2019 <strong>Merpati Futsal</strong>, allright Reserved.</p>
+  <p>&copy Copyright 2019 <strong>Merpati Futsal</strong>, allright Reserved.</p>
 </footer>
 
 

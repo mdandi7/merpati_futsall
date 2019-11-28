@@ -8,23 +8,23 @@ include "configdb.php";
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $nama_aplikasi ?></title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
+  <title><?php echo $nama_aplikasi ?></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
 
-	<style type="text/css">
-		.navbar {
-			padding: .8rem;
-		}
-		.navbar-nav li {
-			padding-right: 20px;
-		}
-		.carousel-inner img {
-			width: 100%;
-			height: 100%;
-		}
-	</style>
+  <style type="text/css">
+    .navbar {
+      padding: .8rem;
+    }
+    .navbar-nav li {
+      padding-right: 20px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body class="text-monospace">
 
@@ -57,7 +57,7 @@ Merpati Futsal
 <!-- jumbotron -->
 <div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; /*background: url(1.jpeg);*/ background-repeat: no-repeat; background-size: 150%">
   <div class="container text-center">
-  	<img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
+    <img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
     <h1 class="display-4 text-light">Admin Dashboard</h1>
     <p  class="lead text-light "><?php echo $login_session?></p>
   </div>
@@ -72,40 +72,37 @@ Merpati Futsal
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Nama</th>
+      <th scope="col">username</th>
+      <th scope="col">password</th>
+      <th scope="col">email</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  <?php
+    $query = mysqli_query($connection,"SELECT * FROM user");
+
+    $rows = mysqli_num_rows($query);
+    for($i=0;$i<$rows;$i++){
+      $result = mysqli_fetch_assoc($query);
+      //$namaobat_pass = $result['nama_obat'];
+      echo "<tr><td>" .$result['user_id']. "</td>";
+      echo "<td>" .$result['nama']. "</td>";
+      echo "<td>" .$result['username']. "</td>";
+      echo "<td>" .$result['password']. "</td>";
+      echo "<td>" .$result['email']. "</td>";
+    }
+  ?>
   </tbody>
 </table>
-
+<button class="btn btn-info">print</button>
 </div>
 
 <!-- footer -->
 <footer class=" text-center text-light pb-2 pt-2" style="background-color: #333333;">
   <p></p>
-	<p>&copy Copyright 2019 <strong>Merpati Futsal</strong>, allright Reserved.</p>
+  <p>&copy Copyright 2019 <strong>Merpati Futsal</strong>, allright Reserved.</p>
 </footer>
 
 
