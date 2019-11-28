@@ -97,7 +97,7 @@ Merpati Futsal
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="confirm_booking.php">Booking History</a>
           <a class="dropdown-item" href="logout.php">Logout</a>
         </div>
@@ -106,8 +106,14 @@ Merpati Futsal
   </div>
 </nav>
 
-<!-- Body -->
-<body>
+<!-- jumbotron -->
+<div class="jumbotron jumbotron-fluid rounded-bottom mb-0 shadow" style="background-color: #333333; background: url(1.jpeg); background-repeat: no-repeat; background-size: 150%">
+  <div class="container text-center">
+    <img src="4.jpeg" width="20%" class="rounded-circle img-thumbnail">
+    <h1 class="display-4 text-light">Sport Center</h1>
+    <p  class="lead text-light ">Solution for sport venue owner and user on booking desired sport venue with ease.</p>
+  </div>
+</div>
 
 <div class="accordion container py-4" id="accordionExample">
   <div class="card" >
@@ -129,8 +135,12 @@ Merpati Futsal
                 echo "<script>";
                 echo "countDownBook('" .$result['tanggal']. "','" .$result['book_time_interval']. "');";
                 echo "</script>";
-                echo "<div class='row justify-content-center'>Silahkan selesaikan pembayaran pada booking anda dan lakukan konfirmasi. Akan berakhir dalam waktu &nbsp;";
-                echo "<p id='book-count-down' style=' color: red '></p></div>";
+                echo "<div class='row justify-content-center'>Silahkan selesaikan pembayaran pada booking anda dan lakukan konfirmasi.</div>";
+                echo "<div class='row justify-content-center'>Waktu akan habis dalam &nbsp";
+                echo "<p id='book-count-down' class='font-weight-bold' style=' color: red '></p></div>";
+                echo "<div class='container border border-primary text-justify'>Pembayaran bisa dilakukan dengan transfer ke rekening berikut :";
+                echo "<li>MANDIRI 080989898989 a/n Bastian Ajah</li><li>BRI 080989898989 a/n Bastian Ajah</li>";
+                echo "<p class='font-weight-bold'>Total Pembayaran : Rp. 50.000</p></div><br>";
                 echo "<table class='table'>";
                 echo "<thead class='thead-light'>";
                 echo "<tr>";
@@ -215,7 +225,6 @@ Merpati Futsal
 <div class="container py-4">
   
 </div>
-</body>
 <!-- footer -->
 <footer class=" text-center text-light pb-2 pt-2" style="background-color: #333333;">
   <p></p>

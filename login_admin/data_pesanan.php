@@ -107,7 +107,7 @@ Merpati Futsal
         <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Tidak Dikonfirmasi</button>
       </h2>
     </div>
-     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body text-justify">
       <div class="container py-4">
         <table class="table">
@@ -150,9 +150,9 @@ Merpati Futsal
       </div>
       </div>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body text-justify">
-        <div class="container py-4">
+        <div class=" container py-4">
         <table class="table">
         <thead class="thead-dark">
           <tr>

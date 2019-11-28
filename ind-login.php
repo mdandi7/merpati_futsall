@@ -27,7 +27,7 @@ include "login-con.php";
 				     <input type="checkbox" value="remember-me"> Remember me
 				    </label>
 				  </div>
-				  <input class="btn btn-lg btn-secondary btn-block" type="submit" name="submit" id='submit'></input>
+				  <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id='submit'></input>
 				  <a href="ind-regist.php">Register for an account ?</a>
 				  <p class="mt-5 mb-3 text-muted">&copy; Merpati Futsal</p>
 				</form>

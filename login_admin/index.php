@@ -41,13 +41,13 @@ Merpati Futsal
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Beranda<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="booking.php">Booking</a>
-      </li>
+      </li> -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="logout.php">Logout</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-center" href="logout.php">Logout</a>
         </div>
       </li>
     </ul>
