@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2019 at 01:17 AM
+-- Generation Time: Nov 29, 2019 at 01:53 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -41,7 +41,7 @@ CREATE TABLE `lapangan` (
 INSERT INTO `lapangan` (`lap_id`, `nama_lap`, `harga_lap`) VALUES
 (1, 'Lapangan Futsal A', 120000),
 (2, 'Lapangan Futsal B', 120000),
-(3, 'Lapangan Badminton', 120000);
+(8, 'Lapangan Bulutangkis', 20000);
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,10 @@ INSERT INTO `lapangan_book` (`booking_code`, `nama`, `tanggal`, `jam`, `lapangan
 (22, 'Danny', '2019-11-28', '08:00:00', 'Lapangan A', 0, '06:26:47', 2, 0),
 (26, 'Danny', '2019-11-28', '07:00:00', 'Lapangan A', 0, '06:42:42', 2, 0),
 (28, 'Danny', '2019-11-28', '07:00:00', 'Lapangan A', 1, '06:47:56', 2, 1),
-(29, 'dannyajah', '2019-11-28', '08:00:00', 'Lapangan A', 1, '07:12:49', 4, 1);
+(29, 'dannyajah', '2019-11-28', '08:00:00', 'Lapangan A', 1, '07:12:49', 4, 1),
+(30, 'dannyajah', '2019-11-29', '07:00:00', 'Lapangan A', 0, '00:34:00', 4, 0),
+(31, 'dannyajah', '2019-11-29', '07:00:00', 'Lapangan A', 0, '06:00:47', 4, 1),
+(32, 'dannyajah', '2019-11-29', '07:00:00', 'Lapangan A', 0, '06:33:53', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -133,13 +136,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lapangan`
 --
 ALTER TABLE `lapangan`
-  MODIFY `lap_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `lap_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `lapangan_book`
 --
 ALTER TABLE `lapangan_book`
-  MODIFY `booking_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `booking_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`

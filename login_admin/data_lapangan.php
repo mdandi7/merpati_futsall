@@ -25,6 +25,102 @@ include "configdb.php";
       height: 100%;
     }
   </style>
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/JSfunction.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      OnFunctionLoad();
+    });
+
+    function OnFunctionLoad(){
+      $(".input-update").hide();
+
+      $(".button-edit").click(function(e){
+          $(this).parentsUntil("tr").siblings("td").find(".input-update").show();
+          $(this).parentsUntil("tr").siblings("td").find(".div-show").hide();
+          $(this).parentsUntil("tr").siblings("td").find(".button-update").attr("disabled", false);
+          //$(".input-update").show();
+      });
+
+      $(".button-update").click(function(e){
+          var but_updt = this;
+          var lap_id = $(but_updt).parentsUntil("tr").siblings("td").find(".input-0").val();
+          var nama = $(but_updt).parentsUntil("tr").siblings("td").find(".input-1").val();
+          var harga = $(but_updt).parentsUntil("tr").siblings("td").find(".input-2").val();
+
+          $.ajax({
+            type: "POST",
+            url:'update-lap-ajax.php',
+            data: {
+              lap_id: lap_id,
+              nama: nama,
+              harga: harga,
+              ind: 'update'
+            },
+            complete: function(response) {
+              $(but_updt).attr("disabled", true);
+              $(but_updt).parentsUntil("tr").siblings("td").find(".input-update").hide();
+              $(but_updt).parentsUntil("tr").siblings("td").find(".div-show").show();
+              $(but_updt).parentsUntil("tr").siblings("td").find(".div-show-1").html(nama);
+              $(but_updt).parentsUntil("tr").siblings("td").find(".div-show-2").html(harga);
+            },
+            error: function() {
+                alert("Database bermasalah");
+            },
+          });
+          return false;
+      });
+
+      $(".button-delete").click(function(e){
+          var but_del = this;
+          var lap_id = $(but_del).parentsUntil("tr").siblings("td").find(".input-0").val();
+
+          $.ajax({
+            type: "POST",
+            url:'update-lap-ajax.php',
+            data: {
+              lap_id: lap_id,
+              ind: 'delete'
+            },
+            complete: function(response) {
+              $(but_del).closest("tr").remove();
+            },
+            error: function() {
+                alert("Database bermasalah");
+            },
+          });
+          return false;
+      });
+
+      $(".button-insert").click(function(e){
+          var but_ins = this;
+          var nama = $(but_ins).parentsUntil("tr").siblings("td").find(".input-1").val();
+          var harga = $(but_ins).parentsUntil("tr").siblings("td").find(".input-2").val();
+          
+          $.ajax({
+            type: "POST",
+            url:'update-lap-ajax.php',
+            data: {
+              nama: nama,
+              harga: harga,
+              ind: 'insert'
+            },
+            complete: function(response) {
+              $(but_ins).closest("tr").before(response.responseText);
+              $(but_ins).parentsUntil("tr").siblings("td").find(".input-1").val("");
+              $(but_ins).parentsUntil("tr").siblings("td").find(".input-2").val("");
+              OnFunctionLoad();
+            },
+            error: function() {
+                alert("Database bermasalah");
+            },
+          });
+          return false;
+      });
+
+    };
+  </script>
 </head>
 <body class="text-monospace">
 
@@ -75,6 +171,9 @@ Merpati Futsal
       <th scope="col">Lap Code</th>
       <th scope="col">Nama</th>
       <th scope="col">Harga</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -85,11 +184,23 @@ Merpati Futsal
     for($i=0;$i<$rows;$i++){
       $result = mysqli_fetch_assoc($query);
       //$namaobat_pass = $result['nama_obat'];
-      echo "<tr><td>" .$result['lap_id']. "</td>";
-      echo "<td>" .$result['nama_lap']. "</td>";
-      echo "<td>" .$result['harga_lap']. "</td>";
+      echo "<tr><td><div class='div-show div-show-0'>" .$result['lap_id']. "</div><input type='text' class='input-update input-0' readonly value='" .$result['lap_id']. "'></td>";
+      echo "<td><div class='div-show div-show-1'>" .$result['nama_lap']. "</div><input type='text' class='input-update input-1' value='" .$result['nama_lap']. "'></td>";
+      echo "<td><div class='div-show div-show-2'>" .$result['harga_lap']. "</div><input type='text' class='input-update input-2' value='" .$result['harga_lap']. "'></td>";
+      echo "<td><input class='button-edit btn btn-md btn-primary btn-info btn-block' type='submit' value='Edit'></input></td>";
+      echo "<td><input class='button-update btn btn-md btn-primary btn-info btn-block' type='submit' value='Update' disabled></input></td>";
+      echo "<td><input class='button-delete btn btn-md btn-primary btn-info btn-block' type='submit' value='Delete'></input></td></tr>";
     }
   ?>
+    <tr>
+      <td>Tambah :</td>
+      <td><input type='text'  class='input-1' placeholder="Nama Lapangan" ></td>
+      <td><input type='text'  class='input-2' placeholder="Harga Sewa" ></td>
+      <td></td>
+      <td></td>
+      <td>
+      <input class='button-insert btn btn-md btn-primary btn-outline-info btn-block' type='submit' value='Tambah Lapangan'></td>
+    </tr>
   </tbody>
 </table>
 <button class="btn btn-info">print</button>
