@@ -18,7 +18,8 @@
 
         if($rows <= 0){
             $query = mysqli_query($connection, "INSERT INTO lapangan_book(nama,tanggal,jam,lapangan,book_ind,book_time,user_id,pay_ind) VALUES('$login_name','$tgl','$jam','$lap',0,'$time','$login_user',0)");
-        
+			
+			$_SESSION['tgl_book'] = $tgl;
             header("Location: confirm_booking.php");
         }else{
             header("Location: confirm_booking.php");

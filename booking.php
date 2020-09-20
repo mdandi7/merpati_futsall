@@ -156,7 +156,7 @@ Merpati Futsal
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl">Tanggal </label>
-      	  <input type="date" class="form-control" id="tgllapA" oninput="fillButtonOnclick(this.value,'lapA');">
+      	  <input type="date" class="form-control" id="tgllapA" oninput="fillButtonOnclick(this.value,'lapA');getButtonInfo();">
   		  </div>
         <?php
           $j = 7;
@@ -179,7 +179,7 @@ Merpati Futsal
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl_1">Tanggal </label>
-          <input type="date" class="form-control" id="tgllapB" oninput="fillButtonOnclick(this.value,'lapB');">
+          <input type="date" class="form-control" id="tgllapB" oninput="fillButtonOnclick(this.value,'lapB');getButtonInfo();">
 		    </div>
         <?php
           $j = 7;
@@ -202,7 +202,7 @@ Merpati Futsal
       <div class="card-body row">
         <div class="col-sm-3">
         	<label for="tgl_2">Tanggal </label>
-        	<input type="date" class="form-control" id="tgllapBat" oninput="fillButtonOnclick(this.value,'lapBat');">
+        	<input type="date" class="form-control" id="tgllapBat" oninput="fillButtonOnclick(this.value,'lapBat');getButtonInfo();">
   		  </div>
         <?php
           $j = 7;

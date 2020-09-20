@@ -127,7 +127,8 @@ Merpati Futsal
      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body text-justify">
         <?php
-            $query = mysqli_query($connection,"SELECT *, addtime(book_time,000500) as book_time_interval FROM lapangan_book WHERE tanggal = current_date AND user_id = '$login_user' AND current_time < addtime(book_time,000500) AND pay_ind = 0 order by tanggal desc");
+			$tgl = $_SESSION['tgl_book'];
+            $query = mysqli_query($connection,"SELECT *, addtime(book_time,000500) as book_time_interval FROM lapangan_book WHERE tanggal = '$tgl' AND user_id = '$login_user' AND current_time < addtime(book_time,000500) AND pay_ind = 0 order by tanggal desc");
 
             $rows = mysqli_num_rows($query);
             $result = mysqli_fetch_assoc($query);
